@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2022 at 09:29 PM
+-- Generation Time: Apr 20, 2022 at 09:22 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.16
 
@@ -40,7 +40,13 @@ CREATE TABLE `bidang_divisi` (
 INSERT INTO `bidang_divisi` (`id_bidang`, `jabatan`, `id_divisi`) VALUES
 (2, 'Ketua DPM Kemakom', 1),
 (3, 'Sekretaris Jenderal 1', 1),
-(4, 'Sekretaris Jenderal 2', 1);
+(4, 'Sekretaris Jenderal 2', 1),
+(5, 'Ketua Aspirasi', 2),
+(6, 'Ketua Legislasi', 3),
+(7, 'Ketua Pengawasan', 4),
+(8, 'Anggota Aspirasi', 2),
+(9, 'Anggota Legislasi', 3),
+(10, 'Anggota Pengawasan', 4);
 
 -- --------------------------------------------------------
 
@@ -58,7 +64,10 @@ CREATE TABLE `divisi` (
 --
 
 INSERT INTO `divisi` (`id_divisi`, `nama_divisi`) VALUES
-(1, 'Non Divisi');
+(1, 'Non Divisi'),
+(2, 'Aspirasi'),
+(3, 'Legislasi'),
+(4, 'Pengawasan');
 
 -- --------------------------------------------------------
 
@@ -79,6 +88,9 @@ CREATE TABLE `pengurus` (
 
 INSERT INTO `pengurus` (`nim`, `nama`, `semester`, `id_bidang`) VALUES
 ('2000111', 'Hanifah Al Humaira', 4, 2),
+('2000112', 'Aji Muhammad Zapar', 4, 6),
+('2000113', 'Nadira Arevia Hermawan', 4, 7),
+('2000514', 'Satria Pinandita Abyatarsyah', 4, 5),
 ('2100111', 'Dwi Novia Al Husaeni', 2, 3),
 ('2100112', 'Laelatusyadiyah', 2, 4);
 
@@ -114,13 +126,13 @@ ALTER TABLE `pengurus`
 -- AUTO_INCREMENT for table `bidang_divisi`
 --
 ALTER TABLE `bidang_divisi`
-  MODIFY `id_bidang` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_bidang` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `divisi`
 --
 ALTER TABLE `divisi`
-  MODIFY `id_divisi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_divisi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables

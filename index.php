@@ -10,6 +10,22 @@ $jabatan = new Pengurus($db_host, $db_user, $db_pass, $db_name);
 $pengurus->open();
 $jabatan->open();
 $pengurus->getPengurus();
+
+if (isset($_POST['add'])) {
+    $pengurus->addPengurus();
+}
+if (isset($_POST['update'])) {
+    $pengurus->updatePengurus();
+}
+if (!empty($_GET['id_hapus'])) {
+    $id = $_GET['id_hapus'];
+
+    $pengurus->delPengurus($id);
+}
+
+$pengurus->getPengurus();
+
+
 $data = null;
 
 while (list($nim, $nama, $semester, $id_bidang) = $pengurus->getResult()) {

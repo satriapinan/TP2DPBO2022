@@ -9,8 +9,8 @@ $nama = $_GET['nama'];
 $semester = $_GET['semester'];
 $jabatan = $_GET['jabatan'];
 
-
 $data = null;
+$data2 = null;
 
 $data .= "<div class='col-6 p-3 m-auto'>
 				<div class='card p-2  text-decoration-none' style='border-radius: 10px;'>
@@ -40,8 +40,20 @@ $data .= "<div class='col-6 p-3 m-auto'>
 				</div>
 			</div>";
 
+$data2 .= "<div class='row'>
+				<div class='col-6 px-3 m-auto text-end'>
+					<a class='col text-decoration-none' href='form.php?id_update=$nim&nama=$nama&semester=$semester&jabatan=$jabatan'>
+						<button class='btn btn-success'>Update</button>
+					</a>
+					<a class='col text-decoration-none' href='index.php?id_hapus=$nim'>
+						<button class='btn btn-danger'>Delete</button>
+					</a>
+				</div>
+			</div>";
+
 $tpl = new Template("templates/detail.html");
 $tpl->replace("DETAIL_CARD", $data);
+$tpl->replace("DETAIL_BUTTON", $data2);
 $tpl->write();
 
 ?>
